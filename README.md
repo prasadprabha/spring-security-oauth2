@@ -1,25 +1,12 @@
-# Getting Started
 
-### Reference Documentation
-For further reference, please consider the following sections:
+How to Use OAuth2 in project :
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/3.3.5/maven-plugin)
-* [Create an OCI image](https://docs.spring.io/spring-boot/3.3.5/maven-plugin/build-image.html)
-* [OAuth2 Client](https://docs.spring.io/spring-boot/3.3.5/reference/web/spring-security.html#web.security.oauth2.client)
-* [Spring Web](https://docs.spring.io/spring-boot/3.3.5/reference/web/servlet.html)
+Now Spring as a framework provides the feature of OAuth to the developer via its various Maven and Gradle dependencies. To use the OAuth2 in your project, follow the steps below:- 
 
-### Guides
-The following guides illustrate how to use some features concretely:
-
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
-
-### Maven Parent overrides
-
-Due to Maven's design, elements are inherited from the parent POM to the project POM.
-While most of the inheritance is fine, it also inherits unwanted elements like `<license>` and `<developers>` from the parent.
-To prevent this, the project POM contains empty overrides for these elements.
-If you manually switch to a different parent and actually want the inheritance, you need to remove those overrides.
-
+1. Create a new project(Spring Starter) with spring web, spring-security dependency, and oauth2 auto-configure dependency.
+2. Head to the default class. Add the annotation @EnableOAuth2Sso. This allows us to Enable Oauth in our application.
+3. Now, when an Oauth call is made, we need to tell the Client(which is a service and here Github) to look somewhere in order to know what applications can be used to make the OAuth calls. As such, we 4. configure our “application. Properties” file to “applications.yml”.
+5. We also need various permissions from applications in order to use their security in our app. Here as we use Github, head to this page.
+6. Select “New OAuth App” and then the “Register a new OAuth application” page is presented. Enter an app name and description. Then, enter your app’s home page, which should be http://localhost:8080, in this case. Finally, indicate the Authorization callback URL which is basically the URL of the path, the user should land on after authenticated with GitHub.
+7. Now, the app which we have created will give us Client ID and Client secret. Copy these fields.
+8. Now, come back to your Spring application and open applications.yml. This file needs to be modified as below. Copy the data in yml file and it’s ready to go.
