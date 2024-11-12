@@ -1,5 +1,5 @@
 
-How to Use OAuth2 in project :
+#How to Use OAuth2 in project :
 
 Now Spring as a framework provides the feature of OAuth to the developer via its various Maven and Gradle dependencies. To use the OAuth2 in your project, follow the steps below:- 
 
@@ -10,3 +10,6 @@ Now Spring as a framework provides the feature of OAuth to the developer via its
 6. Select “New OAuth App” and then the “Register a new OAuth application” page is presented. Enter an app name and description. Then, enter your app’s home page, which should be http://localhost:8080, in this case. Finally, indicate the Authorization callback URL which is basically the URL of the path, the user should land on after authenticated with GitHub.
 7. Now, the app which we have created will give us Client ID and Client secret. Copy these fields.
 8. Now, come back to your Spring application and open applications.yml. This file needs to be modified as below. Copy the data in yml file and it’s ready to go.
+
+
+For more information refer : https://www.geeksforgeeks.org/oauth2-authentication-with-spring-and-github/?ref=next_article
